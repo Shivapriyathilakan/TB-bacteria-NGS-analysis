@@ -1,0 +1,51 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##bcftoolsVersion=1.19+htslib-1.19
+##bcftoolsCommand=mpileup -f data/Chromosome.fasta align_data/alignment_sorted.bam
+##reference=file://data/Chromosome.fasta
+##contig=<ID=Chromosome,length=4411532>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of raw reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of raw reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Read Position Bias (closer to 0 is better)">
+##INFO=<ID=MQBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Mapping Quality Bias (closer to 0 is better)">
+##INFO=<ID=BQBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Base Quality Bias (closer to 0 is better)">
+##INFO=<ID=MQSBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Mapping Quality vs Strand Bias (closer to 0 is better)">
+##INFO=<ID=SCBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Soft-Clip Length Bias (closer to 0 is better)">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric, http://samtools.github.io/bcftools/rd-SegBias.pdf">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.19+htslib-1.19
+##bcftools_callCommand=call -mv -Ob -o variant_data/variants.bcf; Date=Sat May  9 11:55:27 2026
+##bcftools_viewVersion=1.19+htslib-1.19
+##bcftools_viewCommand=view variant_data/variants.bcf; Date=Sat May  9 13:04:11 2026
+##bcftools_filterVersion=1.19+htslib-1.19
+##bcftools_filterCommand=filter -e 'QUAL<20 || DP<4 || MQ<30' -o variant_data/filtered_variants.vcf variant_data/final_variants.vcf; Date=Sat May  9 14:26:59 2026
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	align_data/alignment_sorted.bam
+Chromosome	7582	.	A	G	228.412	PASS	DP=249;VDB=5.54557e-07;SGB=-0.693147;RPBZ=-1.54238;MQBZ=0;MQSBZ=0;BQBZ=2.39848;SCBZ=-4.19251;MQ0F=0;AC=2;AN=2;DP4=2,0,113,103;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	7585	.	G	C	225.426	PASS	DP=250;VDB=1.36367e-06;SGB=-0.693147;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,118,101;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	761155	.	C	T	228.412	PASS	DP=249;VDB=0.00270395;SGB=-0.693147;RPBZ=-1.62392;MQBZ=0;MQSBZ=0;BQBZ=2.38513;SCBZ=-2.41601;MQ0F=0;AC=2;AN=2;DP4=2,0,196,48;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	781687	.	A	G	228.409	PASS	DP=250;VDB=0.000164316;SGB=-0.693147;RPBZ=1.18426;MQBZ=0;MQSBZ=0;BQBZ=0.516571;SCBZ=-5.86863;MQ0F=0;AC=2;AN=2;DP4=1,0,180,55;MQ=59	GT:PL	1/1:255,255,0
+Chromosome	801268	.	T	C	228.407	PASS	DP=250;VDB=8.55136e-05;SGB=-0.693147;RPBZ=0.676522;MQBZ=0;MQSBZ=0;BQBZ=-0.687411;SCBZ=0.164381;MQ0F=0;AC=2;AN=2;DP4=1,0,174,53;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	1473246	.	A	G	225.417	PASS	DP=196;VDB=0.282311;SGB=-0.693147;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,39,97;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	1675155	.	C	A	139.416	PASS	DP=6;VDB=0.126715;SGB=-0.511536;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,2,1;MQ=60	GT:PL	1/1:169,9,0
+Chromosome	1675193	.	C	G	139.416	PASS	DP=6;VDB=0.121629;SGB=-0.511536;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,2,1;MQ=60	GT:PL	1/1:169,9,0
+Chromosome	1917972	.	A	G	225.417	PASS	DP=233;VDB=0.993764;SGB=-0.693147;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,119,48;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	2155168	.	C	G	225.417	PASS	DP=272;VDB=1.18179e-24;SGB=-0.693147;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,130,54;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	2225365	.	T	C	80.4149	PASS	DP=4;VDB=0.36;SGB=-0.453602;MQ0F=0;AC=2;AN=2;DP4=0,0,0,2;MQ=60	GT:PL	1/1:110,6,0
+Chromosome	2288853	.	A	C	225.422	PASS	DP=247;VDB=8.04588e-06;SGB=-0.693147;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,180,48;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	2726350	.	G	T	38.0333	PASS	DP=246;VDB=2.471e-06;SGB=-0.693147;RPBZ=6.46759;MQBZ=-1.08528;MQSBZ=1.32106;BQBZ=-9.43174;SCBZ=1.09631;MQ0F=0;AC=1;AN=2;DP4=87,59,85,0;MQ=59	GT:PL	0/1:72,0,255
+Chromosome	2863757	.	A	C	21.4353	PASS	DP=4;SGB=-0.379885;RPBZ=-1;MQBZ=0;MQSBZ=0;BQBZ=0;SCBZ=1;MQ0F=0;AC=1;AN=2;DP4=0,1,1,0;MQ=60	GT:PL	0/1:54,0,54
+Chromosome	3119183	.	T	G	107.29	PASS	DP=15;VDB=9.50611e-05;SGB=-0.636426;RPBZ=-2.47758;MQBZ=0;MQSBZ=0;BQBZ=1.38744;SCBZ=-1.32288;MQ0F=0;AC=1;AN=2;DP4=3,1,5,2;MQ=60	GT:PL	0/1:149,9,94
+Chromosome	4247429	.	A	G	225.417	PASS	DP=248;VDB=5.87528e-14;SGB=-0.693147;MQSBZ=0.448712;MQ0F=0;AC=2;AN=2;DP4=0,0,149,30;MQ=59	GT:PL	1/1:255,255,0
+Chromosome	4326304	.	GGAG	GGAGAG	228.365	PASS	INDEL;IDV=233;IMF=0.94332;DP=247;VDB=0.00706133;SGB=-0.693147;RPBZ=-3.82544;MQBZ=0;MQSBZ=0;BQBZ=-0.918936;SCBZ=-6.00702;MQ0F=0;AC=2;AN=2;DP4=8,1,140,91;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	4407588	.	T	C	225.417	PASS	DP=250;VDB=3.9764e-05;SGB=-0.693147;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,133,91;MQ=60	GT:PL	1/1:255,255,0
+Chromosome	4407927	.	T	G	225.417	PASS	DP=249;VDB=0.26474;SGB=-0.693147;MQSBZ=0;MQ0F=0;AC=2;AN=2;DP4=0,0,129,87;MQ=59	GT:PL	1/1:255,255,0
