@@ -17,5 +17,6 @@ The http files of FASTQ, quality check after trimming, SnpEff summary files are 
 - Tools: fastqc, fastp, Entrez Direct, bwa, samtools, bcftools. They all can be installed by terminal command: sudo apt update && sudo apt install <tool name> -y
 - I have not included SnpEff in this list because its installation is within the script.
 - I had pre-made empty folders called 'data', 'align_data', 'annotations', 'snpefftool', 'trimm_data', 'variant_data'. Therefore the path in commands throughout the script are a bit elaborate to maintain clarity and avoid clutter.
+- Linux terminal/WSL
 - 8Gb RAM system can run this script because TB bacterial genome is tiny.
 
