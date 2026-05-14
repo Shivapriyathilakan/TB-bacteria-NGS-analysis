@@ -16,7 +16,7 @@ The script includes:
 * Provide execution permission: chmod 755 <file_name>.sh
 * Execute the file using: ./<file_name>.sh
 
-I used the sample SRR35576196 for analysis. Also, the reference genome accession ID of *Mycobacterium tuberculosis* strain h37rv was NC_000962.3.
+I used the sample SRR35576196 for analysis. Also, the reference genome accession ID of *Mycobacterium tuberculosis* strain h37rv used here was NC_000962.3.
 
 The results of the NGS analysis pipeline is provided in 'Files' within this github repository.
 
