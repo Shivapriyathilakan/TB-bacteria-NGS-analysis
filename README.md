@@ -2,7 +2,7 @@
 *NGS data analysis of Mycobacterium tuberculosis for drug resistance genes*
 
 ## Project Overview
-*This repository contains bash script for identifying mutations related to drug resistance in resistance-associated Mycobacterium tuberculosis strain, alogn with the results of the findings*
+*This repository contains bash script for identifying mutations related to drug resistance in resistance-associated Mycobacterium tuberculosis strain, along with the results of the findings*
 The script includes:
 - **FASTQ** processing for quality control
 - Read trimming to remove short reads and poor quality trailing bases at the ends using **fastp**
@@ -11,12 +11,19 @@ The script includes:
 - Variant calling using **BCFtools**
 - Annotation of mutations using **SnpEff**
 
-The http files of FASTQ, quality check after trimming, SnpEff summary files are also included.
+## How to run the script
+* Change the path to working directory provided at the fourth line of the script to where your folder is.
+* Provide execution permission: chmod 755 <file_name>.sh
+* Execute the file using: ./<file_name>.sh
+
+I used the sample SRR35576196 for analysis. Also, the reference genome accession ID of *Mycobacterium tuberculosis* strain h37rv was NC_000962.3.
+
+The results of the NGS analysis pipeline is provided in 'Files' within this github repository.
 
 ## Requirements for the pipeline to run
-- Tools: fastqc, fastp, Entrez Direct, bwa, samtools, bcftools. They all can be installed by terminal command: sudo apt update && sudo apt install <tool name> -y
-- I have not included SnpEff in this list because its installation is within the script.
-- I had pre-made empty folders called 'data', 'align_data', 'annotations', 'snpefftool', 'trimm_data', 'variant_data'. Therefore the path in commands throughout the script are a bit elaborate to maintain clarity and avoid clutter.
+- Tools: fastqc, fastp, Entrez Direct, sra-toolkit, bwa, samtools, bcftools and SnpEff. Most of these can be installed by terminal command: sudo apt update && sudo apt install <tool name> -y. However Entrez Direct and SnpEff have different installation methods.
+- Java (JDK 8 or higher) is required for running SnpEff tool.
+- I had pre-made empty folders called 'raw_data', 'align_data', 'annotation_data', 'qc_data', 'variant_data'. Therefore the path in commands throughout the script are a bit elaborate to maintain clarity and avoid clutter.
 - Linux terminal/WSL
 - 8Gb RAM system can run this script because TB bacterial genome is tiny.
 
